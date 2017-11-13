@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 GitHub Profile for #{profile.name ? profile.name : profile.login}
+  if profile.blog
+    p #{profile.name ? profile.name : profile.login} has a website at #{profile.blog}
+  else
+    p #{profile.name ? profile.name : profile.login} has no website
+
+  figure
+    img(src=profile.avatar_url)
+    figcaption #{profile.name ? profile.name : profile.login}'s avatar.
