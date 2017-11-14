@@ -9,7 +9,7 @@ const request = require('request');
 router.get('/:username', function(req, res, next) {
   console.log("USERNAME PARAMS:", req.params['username']);
   const payload = {
-    url: 'https://api.github.com/users/' + req.params['username'],
+    url: `https://api.github.com/users/${req.params['username']}`,
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${process.env['GITHUB_USER_READ_TOKEN']}`
